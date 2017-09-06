@@ -1,0 +1,68 @@
+-- [queryOrderCount]
+SELECT COUNT(*)
+FROM MESSAGE_ORDER O
+JOIN MESSAGE_ORDER_STATE S
+ON O.ORDER_NO = S.ORDER_NO
+    -- trim prefix=WHERE prefixOverrides=AND|OR
+    -- iff phone != null and phone !=""
+           O.MOBILE = '#phone#'
+    -- iff orderNo != null and orderNo !=""
+       AND O.ORDER_NO = '#orderNo#'
+    -- iff state != null and state !=""
+       AND S.STATE = '#state#'
+    -- iff channel != null and channel !=""
+       AND O.CHANNEL = '#channel#'
+    -- iff product != null and product !=""
+        AND O.PRODUCT = '#product#'
+    --end
+
+-- [queryOrderCountFromHistory]
+SELECT COUNT(*)
+FROM message_history H
+    -- trim prefix=WHERE prefixOverrides=AND|OR
+    -- iff phone != null and phone !=""
+           H.MOBILE = '#phone#'
+    -- iff orderNo != null and orderNo !=""
+       AND H.ORDER_NO = '#orderNo#'
+    -- iff state != null and state !=""
+       AND H.STATE = '#state#'
+    -- iff channel != null and channel !=""
+       AND H.CHANNEL = '#channel#'
+    -- iff product != null and product !=""
+       AND H.PRODUCT = '#product#'
+    --end
+
+
+-- [queryOrderMessage]
+SELECT O.*,S.STATE
+FROM MESSAGE_ORDER O
+JOIN MESSAGE_ORDER_STATE S
+ON O.ORDER_NO = S.ORDER_NO
+    -- trim prefix=WHERE prefixOverrides=AND|OR
+    -- iff phone != null and phone !=""
+           O.MOBILE = '#phone#'
+    -- iff orderNo != null and orderNo !=""
+       AND O.ORDER_NO = '#orderNo#'
+    -- iff state != null and state !=""
+       AND S.STATE = '#state#'
+    -- iff channel != null and channel !=""
+       AND O.CHANNEL = '#channel#'
+    -- iff product != null and product !=""
+       AND O.PRODUCT = '#product#'
+    --end
+
+-- [queryOrderMessageFromHistory]
+SELECT H.*
+FROM message_history H
+    -- trim prefix=WHERE prefixOverrides=AND|OR
+    -- iff phone != null and phone !=""
+           H.MOBILE = '#phone#'
+    -- iff orderNo != null and orderNo !=""
+       AND H.ORDER_NO = '#orderNo#'
+    -- iff state != null and state !=""
+       AND H.STATE = '#state#'
+    -- iff channel != null and channel !=""
+       AND H.CHANNEL = '#channel#'
+    -- iff product != null and product !=""
+       AND H.PRODUCT = '#product#'
+    --end

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="webjars/jquery/3.1.1/jquery.min.js"></script>
+    <script src="webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="/Js/bootstrap-paginator.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+    <link rel="stylesheet" href="webjars/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link href="//cdn.bootcss.com/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>订单查询</title>
+    <style type="text/css">
+        .form-group{
+            height: 55px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="page-header">
+                <h1>
+                    订单查询 <small>螺丝钉测试Demo</small>
+                </h1>
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-12 column">
+                    <div class="tabbable" id="tabs-207491">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a href="#panel-659475" data-toggle="tab">订单查询</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+
+                            <div class="tab-pane active " id="panel-659475">
+                                <form class="navbar-form navbar-left" id="form-phone"  role="search">
+                                    <div class="form-group">
+                                        <input type="text" id="phone" name="phone" class="form-control" placeholder="请输入手机号"  name="phone"/>
+                                    </div> &nbsp;&nbsp;
+                                    <div class="form-group">
+                                        <input type="text" id="orderno" class="form-control" placeholder="请输入订单号" name="orderno"/>
+                                    </div> &nbsp;&nbsp;
+                                    <div class="form-group">
+                                        <select class="form-control" id="channel" name="channel">
+                                            <option value="" selected>选择渠道</option>
+                                            <option value="jd">京东</option>
+                                            <option value="bd">百度</option>
+                                            <option value="dd">滴滴</option>
+                                            <option value="tx">腾讯</option>
+                                        </select>
+                                    </div> &nbsp;&nbsp;
+                                    <div class="form-group">
+                                        <select class="form-control" id="product" name="product">
+                                            <option value="" selected>选择订购产品类型</option>
+                                            <option value="1">大卡</option>
+                                            <option value="2">小卡</option>
+                                            <option value="3">女神卡</option>
+                                        </select>
+                                    </div> &nbsp;&nbsp;
+                                    <div class="form-group">
+                                        <select class="form-control" id="state" name="state">
+                                            <option value="" selected>选择订单变更类型</option>
+                                            <option value="1">激活</option>
+                                            <option value="2">退单</option>
+                                            <option value="CA">待开户</option>
+                                            <option value="EO">发货</option>
+                                            <option value="3">套餐内转</option>
+                                        </select>
+                                    </div> &nbsp;&nbsp;
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-default" id="btn-order">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row clearfix" id="resultPanel">
+                <div class="col-md-12 column">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    ORDER_NO
+                                </th>
+                                <th>
+                                    PARTITION_ID
+                                </th>
+                                <th>
+                                    CHANNEL
+                                </th>
+                                <th>
+                                    CREATE_TIME
+                                </th>
+                                <th>
+                                    MOBILE
+                                </th>
+                                <th>
+                                    PRODUCT
+                                </th>
+                                <th>
+                                    STATE
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul id="example">
+    </ul>
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        </div><!-- /.modal -->
+    </div>
+</div>
+<script src="/Js/order_t.js"></script>
+</body>
+</html>
